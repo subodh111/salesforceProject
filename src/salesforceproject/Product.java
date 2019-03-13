@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 class Product {
     private String name = "blank";
     private double price = -1.0;
