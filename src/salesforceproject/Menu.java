@@ -1,4 +1,3 @@
-//import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,12 +15,13 @@ public class Menu {     // main app interface for starting the features.
             menu.add(new ViewStatus());
             
             for(Feature feature: menu)
-                System.out.println(feature.toString());
+                System.out.println(menu.indexOf(feature) + ": " + feature.toString());
             
             Scanner scan = new Scanner(System.in);
             int choice = scan.nextInt();
             
             String feature = menu.get(choice).start();
+            System.out.println(feature);
             
             
     }
@@ -31,7 +31,7 @@ public class Menu {     // main app interface for starting the features.
         menu = new ArrayList<>();
         menu.add(new SalesTracker());
         menu.add(new ViewStatus());
-            
+        
         for(Feature feature : menu)
         {
             if(feature.toString().equals(featureToStart));
@@ -40,4 +40,6 @@ public class Menu {     // main app interface for starting the features.
         
         return null;
     }
+    
+    
 }

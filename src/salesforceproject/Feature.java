@@ -1,6 +1,4 @@
-public abstract class Feature { // abstract class for model view controller
+public interface Feature {
+    public String start();
     
-    public static String start(){
-        return "Abstract";
-    }
 }
