@@ -2,7 +2,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class SalesTracker extends Feature { // this class is the main feature for implementing the sales tracking logic
+public class SalesTracker implements Feature { // this class is the main feature for implementing the sales tracking logic
     
     private static List<Agent> agents;      // list that carries agents 
     private static List<Customer> customers;    //list to carry customers extracted from database, should it be necessary for later implementations
@@ -16,17 +16,17 @@ public class SalesTracker extends Feature { // this class is the main feature fo
         
     }
     
-    public static String start()
-    {
-        System.out.println("Welcome. What would you like to see?");
-        System.out.println("1. List Deals");
-        System.out.println("2. Track Sales");
+    public String start()
+    {   
+        System.out.println("Sales Tracker feature!");
         
         Scanner scan = new Scanner(System.in);  // Create a Scanner object
         int choice;
         
         while(true)
         {
+            System.out.println("1. List Deals");
+            System.out.println("2. Track Sales");
             choice = scan.nextInt();
             
             if(choice == 1)
