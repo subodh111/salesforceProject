@@ -7,10 +7,9 @@ public class Menu {     // main app interface for starting the features.
     private static List<Feature> menu;      // this menu list carries SalesTracer. It can store any additional features we may wish to add later on
     
     public static void main(String[] args) {
-            System.out.println("Select an item");
+            System.out.println("Select an feature");
             
             menu = new ArrayList<>();
-            
             menu.add(new SalesTracker());
             menu.add(new ViewStatus());
             
@@ -18,11 +17,17 @@ public class Menu {     // main app interface for starting the features.
                 System.out.println(menu.indexOf(feature) + ": " + feature.toString());
             
             Scanner scan = new Scanner(System.in);
-            int choice = scan.nextInt();
+            int choice;
+            choice = scan.nextInt();
+            while(! (choice < menu.size() && choice > -1) )     // bound checker for user input
+            {
+                System.out.println("Invalid input. Choose again:");
+                choice = scan.nextInt();
+            }
+                     
             
-            String feature = menu.get(choice).start();
-            System.out.println(feature);
-            
+            String feature = menu.get(choice).start();      // after user chooses 
+            System.out.println(feature + " is terminated.");
             
     }
     
@@ -40,6 +45,4 @@ public class Menu {     // main app interface for starting the features.
         
         return null;
     }
-    
-    
 }
